@@ -14,7 +14,7 @@ const TaskCard :React.FC<TaskCardprops> = (props) => {
   return (
     <div className="TaskItem">
       <h2 className='Title'>{title}</h2>
-      <p className="text-left">{(dueDate) ? `Due on: ${dueDate}` : `Completed on: ${completedAtDate}`}</p>
+      <p className='Date'>{(dueDate) ? `Due on : ${dueDate}` : `Completed on : ${completedAtDate}` }</p>
       <p className='Assignee'>Assignee: {assigneeName}</p>
     </div>
   )
