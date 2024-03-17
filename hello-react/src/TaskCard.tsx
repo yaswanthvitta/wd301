@@ -3,29 +3,29 @@ import React from 'react';
 
 interface TaskCardprops {
   title: string;
-  cat: string;
-  date:string;
-  assignee:string;
+  completedAtDate: string;
+  dueDate:string;
+  assigneeName:string;
 }
 
 const TaskCard :React.FC<TaskCardprops> = (props) => {
-  const {title,cat,date,assignee} = props;
+  const {title,completedAtDate,dueDate,assigneeName} = props;
 
    const Dates = ({cat}) =>{
 
-    if(cat == 'pending'){
-      return <p className='Date'>Due on: {date}</p>
+    if(cat == ''){
+      return <p className='Date'>Due on: {dueDate}</p>
       }
       else{
-        return <p>Compleated on: {date}</p>
+        return <p>Compleated on: {completedAtDate}</p>
       }
 
   }
   return (
     <div className="TaskItem">
       <h2 className='Title'>{title}</h2>
-      <Dates cat={cat} />
-      <p className='Assignee'>Assignee: {assignee}</p>
+      <Dates cat={completedAtDate} />
+      <p className='Assignee'>Assignee: {assigneeName}</p>
     </div>
   )
 }
