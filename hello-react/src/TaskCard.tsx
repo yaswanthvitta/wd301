@@ -11,20 +11,10 @@ interface TaskCardprops {
 const TaskCard :React.FC<TaskCardprops> = (props) => {
   const {title,completedAtDate,dueDate,assigneeName} = props;
 
-   const Dates = ({cat,due}) =>{
-
-    if(due !== undefined){
-      return <p className='Date'>Due On: {dueDate}</p>
-      }
-    if(cat !== undefined){
-      return <p>Compleated On: {completedAtDate}</p>
-    }
-
-  }
   return (
     <div className="TaskItem">
       <h2 className='Title'>{title}</h2>
-      <p className='Date'>{(dueDate) ? `Due on : ${dueDate}` : `Compleated on : ${completedAtDate}` }</p>
+      <p className="text-left">{(dueDate) ? `Due on: ${dueDate}` : `Completed on: ${completedAtDate}`}</p>
       <p className='Assignee'>Assignee: {assigneeName}</p>
     </div>
   )
