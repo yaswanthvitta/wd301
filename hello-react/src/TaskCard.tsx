@@ -16,15 +16,15 @@ const TaskCard :React.FC<TaskCardprops> = (props) => {
     if(due !== undefined){
       return <p className='Date'>Due On: {dueDate}</p>
       }
-      if(cat !== undefined){
-        return <p>Compleated On: {completedAtDate}</p>
-      }
+    if(cat !== undefined){
+      return <p>Compleated On: {completedAtDate}</p>
+    }
 
   }
   return (
     <div className="TaskItem">
       <h2 className='Title'>{title}</h2>
-      <Dates cat="completedAtDate" due="dueDate" />
+      <p className='Date'>{(dueDate) ? `Due on : ${dueDate}` : `Compleated on : ${completedAtDate}` }</p>
       <p className='Assignee'>Assignee: {assigneeName}</p>
     </div>
   )
