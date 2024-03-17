@@ -11,10 +11,11 @@ interface TaskCardprops {
 const TaskCard :React.FC<TaskCardprops> = (props) => {
   const {title,completedAtDate,dueDate,assigneeName} = props;
 
+
   return (
     <div className="TaskItem">
       <h2 className='Title'>{title}</h2>
-      <p className='Date'>{(dueDate) ? `Due on : ${dueDate}` : `Completed on : ${completedAtDate}` }</p>
+      <p className='Date'>{(dueDate) ? `Due on: ${dueDate}` : `Completed on: ${completedAtDate}` }</p>
       <p className='Assignee'>Assignee: {assigneeName}</p>
     </div>
   )
