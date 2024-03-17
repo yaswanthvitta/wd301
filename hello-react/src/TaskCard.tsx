@@ -14,10 +14,10 @@ const TaskCard :React.FC<TaskCardprops> = (props) => {
    const Dates = ({cat,due}) =>{
 
     if(due !== undefined){
-      return <p className='Date'>Due on: {dueDate}</p>
+      return <p className='Date'>Due On: {dueDate}</p>
       }
       else{
-        return <p>Compleated on: {completedAtDate}</p>
+        return <p>Compleated On: {completedAtDate}</p>
       }
 
   }
