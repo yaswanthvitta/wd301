@@ -1,6 +1,14 @@
 import './TaskCard.css'
+import React from 'react';
 
-const TaskCard = (props) => {
+interface TaskCardprops {
+  title: string;
+  cat: string;
+  date:string;
+  assignee:string;
+}
+
+const TaskCard :React.FC<TaskCardprops> = (props) => {
   const {title,cat,date,assignee} = props;
 
    const Dates = ({cat}) =>{
