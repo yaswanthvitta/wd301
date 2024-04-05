@@ -65,7 +65,7 @@ const TaskForm = (props: TaskFormProps) => {
       <div className="grid md:grid-cols-4 md:gap-3">
         <div className="relative z-0 w-full mb-6 group">
           <input
-            id="#todoTitle"
+            id="todoTitle"
             name="todoTitle"
             type="text"
             value={formState.title}
@@ -82,7 +82,7 @@ const TaskForm = (props: TaskFormProps) => {
         </div>
         <div className="relative z-0 w-full mb-6 group">
           <input
-            id="#todoDescription"
+            id="todoDescription"
             name="todoDescription"
             type="text"
             value={formState.description}
@@ -99,7 +99,7 @@ const TaskForm = (props: TaskFormProps) => {
         </div>
         <div className="relative z-0 w-full mb-6 group">
           <input
-            id="#todoDueDate"
+            id="todoDueDate"
             name="todoDueDate"
             type="date"
             value={formState.dueDate}

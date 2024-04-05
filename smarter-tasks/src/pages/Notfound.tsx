@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 
-const NotFound = () => {
+const Notfound = () => {
   return (
     <div style={{textAlign:"center"}}>
       <h1 style={{margin:"10px",fontSize:"50px"}}>404 - Not Found</h1>
@@ -13,4 +13,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Notfound;
