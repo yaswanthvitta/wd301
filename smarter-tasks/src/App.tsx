@@ -10,7 +10,7 @@ import Layout from "./Layout"
 import Signin from "./pages/Signin";
 import TaskDetailsPage from "./pages/TaskDetailsPage";
 import ProtectedRoute from "./ProtectedRoute";
-import NotFound from "./pages/NotFound"
+import NotFound from "./pages/Notfound"
 const router = createBrowserRouter([
   {
       path: "/",
