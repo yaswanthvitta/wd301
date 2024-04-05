@@ -1,6 +1,7 @@
 import React from "react";
 
 interface TaskItem{
+  id:string;
   title:string;
   description:string;
   dueDate:string;
@@ -11,13 +12,20 @@ interface TaskFormProps {
 }
 
 interface TaskFormState {
+    id:string;
     title: string;
     description:string;
     dueDate:string;
 }
 
 const TaskForm = (props: TaskFormProps) => {
+  function uniqueid() {
+    const num = Math.floor(1000 + Math.random() * 9000); 
+    return num.toString(); 
+}
+
   const [formState, setFormState] = React.useState<TaskFormState>({
+    id:uniqueid(),
     title: "",
     description: "",
     dueDate: "",
@@ -49,7 +57,7 @@ const TaskForm = (props: TaskFormProps) => {
       return;
     }
     props.addTask(formState);
-    setFormState({ title: "", description: "", dueDate: "" });
+    setFormState({ id:"", title: "", description: "", dueDate: "" });
   };
 
   return (

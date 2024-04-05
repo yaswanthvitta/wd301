@@ -14,10 +14,10 @@ interface Props {
     const [taskAppState, setTaskAppState] = useLocalStorage<TaskAppState>("tasks", {
       tasks: [],
     });
-    const deleteTask=(id:number)=>{
+    const deleteTask=(id:string)=>{
       console.log(taskAppState)
       props.tasks.forEach((_item, index) => {
-        if (index === id) {
+        if (_item.id === id) {
           props.tasks.splice(index, 1);
         }
         setTaskAppState({ tasks: props.tasks });
@@ -26,10 +26,10 @@ interface Props {
 
     }
     const list = props.tasks.map((task, idx) => (
-      <li>
+      <li key={idx}>
       <Task
         key={idx}
-        id={idx}
+        id={task.id}
         title={task.title}
         description={task.description}
         dueDate={task.dueDate}
