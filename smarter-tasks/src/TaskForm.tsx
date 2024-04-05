@@ -65,7 +65,7 @@ const TaskForm = (props: TaskFormProps) => {
       <div className="grid md:grid-cols-4 md:gap-3">
         <div className="relative z-0 w-full mb-6 group">
           <input
-            id="todoTitle"
+            id="#todoTitle"
             name="todoTitle"
             type="text"
             value={formState.title}
@@ -82,7 +82,7 @@ const TaskForm = (props: TaskFormProps) => {
         </div>
         <div className="relative z-0 w-full mb-6 group">
           <input
-            id="todoDescription"
+            id="#todoDescription"
             name="todoDescription"
             type="text"
             value={formState.description}
@@ -99,7 +99,7 @@ const TaskForm = (props: TaskFormProps) => {
         </div>
         <div className="relative z-0 w-full mb-6 group">
           <input
-            id="todoDueDate"
+            id="#todoDueDate"
             name="todoDueDate"
             type="date"
             value={formState.dueDate}
@@ -118,7 +118,7 @@ const TaskForm = (props: TaskFormProps) => {
         <div className="relative z-0 w-full mb-6 group">
           <button
             type="submit"
-            id="addTaskButton"
+            id="#addTaskButton"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Add item
