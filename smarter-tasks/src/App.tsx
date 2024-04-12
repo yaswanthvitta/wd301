@@ -4,17 +4,19 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import HomePage from './pages/HomePage';
-import TaskListPage from './pages/TaskListPage';
-import Layout from "./Layout"
-import Signin from "./pages/Signin";
-import TaskDetailsPage from "./pages/TaskDetailsPage";
+import Signin from "./pages/signin/index.tsx";
 import ProtectedRoute from "./ProtectedRoute";
 import Notfound from "./pages/Notfound"
+import Signup from './pages/signup/index.tsx';
+import Dashboard from "./pages/dashboard";
 const router = createBrowserRouter([
   {
       path: "/",
-      element: <Navigate to="/signin" replace />,
+      element: <Signup />,
+    },
+    {
+      path: "/signup",
+      element: <Signup />,
     },
     {
       path:"*",
@@ -30,32 +32,22 @@ const router = createBrowserRouter([
       element: <Signin />,
     },
     {
-    element: <ProtectedRoute>
-    <Layout />
-  </ProtectedRoute>,
-    children: [
-      {
-        path: "/home",
-        element: (<HomePage />)
-      },
-      {
-        path: "tasks",
-        element: (<TaskListPage />)
-      },
-      {
-        path: "tasks/:id",
-        element: (<TaskDetailsPage />)
-      },
-      
-      
-    ]
-  }
+      path: "/dashboard",
+      element: (
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>
+      ),
+    },
 ]);
 
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <div>
+      <RouterProvider router={router} />
+    </div>
+    
   );
 }
 
