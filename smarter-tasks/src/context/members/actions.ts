@@ -49,3 +49,24 @@ export const addMember = async (dispatch: any, args: any) => {
       return { ok: false, error }
     }
   };
+
+
+  export const deleteMember = async (dispatch: any, id: number) => {
+    const token = localStorage.getItem("authToken") || "";
+    try {
+      const response = await fetch(`${API_ENDPOINT}/users/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to delete the user");
+      }
+  
+      dispatch({ type: "DELETE_MEMBER_SUCCESS", payload: id });
+      return { ok: true };
+    } catch (error) {
+      console.error("Delete member operation failed:", error);
+      throw error;
+    }
+  };
