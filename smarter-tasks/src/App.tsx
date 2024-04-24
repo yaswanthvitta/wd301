@@ -1,54 +1,24 @@
-// import TaskApp from "./TaskApp";
-import {
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from "react-router-dom";
-import Signin from "./pages/signin/index.tsx";
-import ProtectedRoute from "./ProtectedRoute";
-import Notfound from "./pages/Notfound"
-import Signup from './pages/signup/index.tsx';
-import Dashboard from "./pages/dashboard";
-const router = createBrowserRouter([
-  {
-      path: "/",
-      element: <Signup />,
-    },
-    {
-      path: "/signup",
-      element: <Signup />,
-    },
-    {
-      path:"*",
-      element: <Navigate to="/notfound" replace />
-    },
-    {
-      path: "/notfound",
-      element: <Notfound/>
-    },
+import React, { useContext } from "react";
+import { RouterProvider } from "react-router-dom";
+import "./App.css";
+import router from "./routes"
+import { ThemeContext } from "./context/theme";
 
-    {
-      path: "/signin",
-      element: <Signin />,
-    },
-    {
-      path: "/dashboard",
-      element: (
-        <ProtectedRoute>
-          <Dashboard />
-        </ProtectedRoute>
-      ),
-    },
-]);
+// To do that, first I'll import the `ProjectsProvider` in the `App` component.
 
-
-function App() {
+import { ProjectsProvider } from "./context/projects/context";
+import { MembersProvider } from "./context/members/context";
+// Then I'll wrap the RouterProvider component with the <ProjectsProvider> component.
+const App = () => {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div>
-      <RouterProvider router={router} />
+     <div className={`h-screen w-full mx-auto py-2 ${theme === "dark" ? "dark" : ""}`}>
+      <ProjectsProvider>
+        <MembersProvider>
+        <RouterProvider router={router} />
+        </MembersProvider>
+      </ProjectsProvider>
     </div>
-    
   );
 }
-
 export default App;

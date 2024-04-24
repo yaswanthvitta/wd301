@@ -6,7 +6,6 @@ const Dashboard: React.FC = () => {
     const navigate = useNavigate()
     const logout = () => {
        localStorage.removeItem("userData");
-       localStorage.removeItem("authenticated");
        localStorage.removeItem("authToken");
        navigate("/signin")
     }
