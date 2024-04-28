@@ -10,7 +10,7 @@ import { TaskDetailsPayload } from "../../context/task/types";
 const NewTask = () => {
   const [isOpen, setIsOpen] = useState(true);
 
-  let { projectID } = useParams();
+  const { projectID } = useParams();
   let navigate = useNavigate();
 
   // Use react-hook-form to create form submission handler and state.
