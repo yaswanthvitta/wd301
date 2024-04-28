@@ -11,7 +11,7 @@ const NewTask = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const { projectID } = useParams();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   // Use react-hook-form to create form submission handler and state.
   const {
