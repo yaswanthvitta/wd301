@@ -9,7 +9,7 @@ import Members from "../pages/members"
 import Logout from "../pages/logout";
 import ProjectContainer from "../pages/projects/ProjectContainer";
 import ProjectDetails from "../pages/projects/project_details/ProjectDetails.tsx";
-import NewTask from "../pages/tasks/NewTask";
+import NewTask from "../pages/tasks/NewTask.tsx";
 
 
 const router = createBrowserRouter([
@@ -53,8 +53,9 @@ const router = createBrowserRouter([
                 {
                   path: "tasks",
                   children: [
+                    { index: true, element: <Navigate to="../" replace /> },
                     {
-                      path: "new", element: <NewTask />,
+                      path: "new", element: <NewTask/>,
                     },
                     {
                       path: ":taskID",

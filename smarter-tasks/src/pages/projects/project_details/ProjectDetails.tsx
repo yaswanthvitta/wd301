@@ -15,6 +15,7 @@ const ProjectDetails = () => {
     return <>No such Project!</>;
   }
 
+
   return (
     <>
       <div className="flex justify-between">
