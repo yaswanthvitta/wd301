@@ -40,6 +40,7 @@ export const addTask = async (
     }
     // Turn `isLoading` to `false`
     dispatch({ type: TaskListAvailableAction.CREATE_TASK_SUCCESS });
+    refreshTasks(dispatch, projectID);
   } catch (error) {
     console.error("Operation failed:", error);
     // Update error status in the state.

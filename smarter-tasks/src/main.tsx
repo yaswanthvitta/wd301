@@ -4,5 +4,7 @@ import './index.css'
 import { ThemeProvider } from "./context/theme";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <App />
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>,
 )
