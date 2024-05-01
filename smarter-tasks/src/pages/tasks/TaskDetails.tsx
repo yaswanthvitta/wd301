@@ -209,8 +209,6 @@ const TaskDetails = () => {
 
                     <CommentList />
                     <NewComment />
-                    
-                    
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

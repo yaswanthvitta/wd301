@@ -27,7 +27,7 @@ export default function CommentList() {
             </div>
             <div className="mr-3">
               <strong>By:</strong>
-              {comment.User ? comment.User.user : User}
+              {comment.User ? comment.User.name : User}
             </div>
           </div>
         ))}
