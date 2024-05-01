@@ -10,6 +10,7 @@ import Logout from "../pages/logout";
 import ProjectContainer from "../pages/projects/ProjectContainer";
 import ProjectDetails from "../pages/project_details";
 import NewTask from "../pages/tasks/NewTask.tsx";
+import TaskDetailsContainer from "../pages/tasks/TaskDetailsContainer";
 
 
 const router = createBrowserRouter([
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
                     },
                     {
                       path: ":taskID",
-                      children: [{ index: true, element: <>Show Task Details</> }],
+                      children: [{ index: true, element: <TaskDetailsContainer /> },],
                     },
                   ],
                 },

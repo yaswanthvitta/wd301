@@ -3,7 +3,7 @@ import React from "react";
 import ProjectDetails from "./ProjectDetails";
 
 import { Outlet } from "react-router-dom";
-import { TasksProvider } from "/root/wd301/smarter-tasks/src/context/task/context.tsx";
+import { TasksProvider } from "../../context/task/context.tsx";
 
 const ProjectDetailsIndex: React.FC = () => {
     return (

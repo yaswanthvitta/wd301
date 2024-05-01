@@ -5,6 +5,10 @@ import { TaskDetails } from "../../context/task/types";
 import { Link } from "react-router-dom";
 import { Draggable } from "react-beautiful-dnd";
 import  { forwardRef } from "react";
+import { deleteTask } from "../../context/task/actions";
+import  { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { useTasksDispatch } from "../../context/task/context";
 
 const Task = forwardRef<
   HTMLDivElement,
@@ -12,7 +16,7 @@ const Task = forwardRef<
 >((props, ref) => {
   const { task } = props;
   return (
-    <div className="m-2 flex">
+    <div ref={ref} {...props} className="m-2 flex">
       <Link
         className="TaskItem w-full shadow-md border border-slate-100 bg-white"
         to={`tasks/${task.id}`}
@@ -25,6 +29,9 @@ const Task = forwardRef<
             </p>
             <p className="text-sm text-slate-500">
               Description: {task.description}
+            </p>
+            <p className="text-sm text-slate-500">
+              Assignee: {task.assignedUserName ?? "-"}
             </p>
           </div>
           <button
