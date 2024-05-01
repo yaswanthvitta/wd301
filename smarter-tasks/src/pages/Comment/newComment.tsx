@@ -42,7 +42,6 @@ const NewComment = () => {
         };
         console.log(comment);
         if (projectID && taskID) {
-            console.log(projectID && taskID);
           addComments(commentDispatch, projectID, taskID, comment);
         }
       }

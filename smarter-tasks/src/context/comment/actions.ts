@@ -16,6 +16,7 @@ export const fetchComments = async (dispatch: CommentDispatch,
       headers: { 'Content-Type': 'application/json', "Authorization": `Bearer ${token}` },
     });
     const data = await response.json();
+    console.log(data);
     dispatch({ type: CommentAvailableAction.FETCH_COMMENTS_SUCCESS, payload: data });
   } catch (error) {
     console.log('Error fetching projects:', error);
@@ -50,7 +51,9 @@ export const addComments = async (
         throw new Error("Failed to create task");
       }
       dispatch({ type: CommentAvailableAction.CREATE_COMMENTS_SUCCESS ,payload: data });
+      fetchComments(dispatch, projectId,taskId);
       refreshComments(dispatch, projectId,taskId);
+
     } catch (error) {
       console.error("Operation failed:", error);
       dispatch({
