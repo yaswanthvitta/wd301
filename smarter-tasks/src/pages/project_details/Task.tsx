@@ -14,6 +14,8 @@ const Task = forwardRef<
   HTMLDivElement,
   React.PropsWithChildren<{ task: TaskDetails }>
 >((props, ref) => {
+  const taskDispatch = useTasksDispatch();
+  const { projectID } = useParams();
   const { task } = props;
   return (
     <div ref={ref} {...props} className="m-2 flex">
@@ -36,7 +38,10 @@ const Task = forwardRef<
           </div>
           <button
             className="deleteTaskButton cursor-pointer h-4 w-4 rounded-full my-5 mr-5"
-            onClick={(event) => {}}
+            onClick={(event) => {
+              event.preventDefault();
+              deleteTask(taskDispatch, projectID ?? "", task);
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
