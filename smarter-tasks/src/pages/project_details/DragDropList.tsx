@@ -2,7 +2,6 @@ import React from "react";
 import { ProjectData } from "../../context/task/types";
 import Column from "./Column";
 import { DragDropContext, OnDragEndResponder } from "react-beautiful-dnd";
-import { Droppable } from "react-beautiful-dnd";
 import { useTasksDispatch } from "../../context/task/context";
 import { reorderTasks } from "../../context/task/actions";
 import { AvailableColumns} from "../../context/task/types";

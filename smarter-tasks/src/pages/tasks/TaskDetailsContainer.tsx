@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { CommentProvider } from "../../context/comment/context";
 
 const TaskDetailsContainer = () => {
-  let { taskID } = useParams();
+  const { taskID } = useParams();
   const projectState = useProjectsState();
   const taskListState = useTasksState();
   const isFetchingTasks = taskListState.isLoading;

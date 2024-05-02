@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { Draggable } from "react-beautiful-dnd";
 import  { forwardRef } from "react";
 import { deleteTask } from "../../context/task/actions";
-import  { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useTasksDispatch } from "../../context/task/context";
 

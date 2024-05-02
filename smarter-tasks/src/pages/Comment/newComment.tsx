@@ -6,14 +6,15 @@ import { addComments, fetchComments } from "../../context/comment/actions";
 import { useCommentDispatch } from "../../context/comment/context";
 
 const NewComment = () => {
-  let [, setIsOpen] = useState(true);
+  const [, setIsOpen] = useState(true);
 
-  let { projectID, taskID } = useParams();
-  let navigate = useNavigate();
+  const { projectID, taskID } = useParams();
+  const navigate = useNavigate();
   const commentDispatch = useCommentDispatch();
   const {
     register,
     handleSubmit,
+    // eslint-disable-next-line no-empty-pattern
     formState: {},
   } = useForm<CommentDetailsPayload>({});
 

@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useProjectsState } from "../../context/projects/context";
 import { Link } from "react-router-dom";
 
 export default function ProjectListItems() {
-  let state: any = useProjectsState();
+  const state: any = useProjectsState();
   const { projects, isLoading, isError, errorMessage } = state;
   console.log(projects);
 
