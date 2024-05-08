@@ -32,10 +32,10 @@ const formatDateForPicker = (isoDate: string) => {
 };
 
 const TaskDetails = () => {
-  let [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
 
-  let { projectID, taskID } = useParams();
-  let navigate = useNavigate();
+  const { projectID, taskID } = useParams();
+  const navigate = useNavigate();
 
   // Extract project and task details.
   const projectState = useProjectsState();
@@ -57,7 +57,6 @@ const TaskDetails = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm<TaskFormUpdatePayload>({
     defaultValues: {
       title: selectedTask.title,
